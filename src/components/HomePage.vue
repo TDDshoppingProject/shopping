@@ -1,14 +1,114 @@
 <template>
-  <div>
-
+  <div class="welcome-container">
+    <el-row class="header">
+      <el-col :span="8">
+        <div class="my-info">
+          <el-link :underline="false"><i class="el-icon-user-solid" style="color: #EC9454;"></i>我的淘多多</el-link>
+        </div>
+      </el-col>
+      <el-col :span="16">
+        <div class="login-sign">
+          <el-link :underline="false" type="warning" class="shopping-car"><i class="el-icon-shopping-cart-2"></i>购物车</el-link>
+          <el-link :underline="false" type="danger">请登录</el-link>
+          <el-link :underline="false" class="sign">免费注册</el-link>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row class="logo-search">
+      <el-col :span="6">
+        <div class="logo">
+          <img src="../assets/images/logo_transparent.png" alt="">
+        </div>
+      </el-col>
+      <el-col :span="18">
+        <div class="search">
+          <el-input placeholder="请输入内容" v-model="input" class="input-with-select">
+    <el-select v-model="select" slot="prepend" placeholder="请选择">
+      <el-option label="宝贝" value="1"></el-option>
+      <el-option label="店铺" value="2"></el-option>
+    </el-select>
+    <el-button slot="append" icon="el-icon-search">搜索</el-button>
+  </el-input>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomePage'
-}
+  name: 'HomePage',
+  data () {
+    return {
+      input: '',
+      select: ''
+    }
+  }
+
+};
 </script>
 
-<style lang="">
+<style scoped>
+.welcome-container {
+  background-color: #EAE8E8;
+  height: 100%;
+}
+.el-col {
+  border-radius: 4px;
+}
+.header {
+  height: 30px;
+  background-color: #F5F5F5;
+}
+.my-info {
+  line-height: 30px;
+  text-align: center;
+}
+.login-sign {
+  line-height: 30px;
+  text-align: end;
+}
+.shopping-car {
+  margin-right: 30px;
+}
+.sign{
+  margin-left: 5px;
+  margin-right: 130px;
+}
+.logo-search {
+  height: 120px;
+}
+.logo {
+  text-align: end;
+}
+.search {
+  height: 120px;
+  line-height: 120px;
+}
+.el-select {
+  width: 100px;
+}
+.el-input {
+  width: 500px;
+  margin-left: 100px;
+  border: 1px solid #EC9454;
+  border-radius: 30px;
+}
+
+/deep/ .el-input__inner {
+  height: 60px;
+}
+
+/deep/ .el-input-group__prepend {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+/deep/ .el-input-group__append {
+  color: #fff;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 60px;
+  background-color: #ec7a29;
+}
 </style>
