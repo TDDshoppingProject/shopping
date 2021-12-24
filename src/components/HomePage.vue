@@ -42,22 +42,23 @@
       </el-col>
     </el-row>
     <div class="mainBox">
+      <!-- 今日推荐 -->
+      <h3 style="padding: 10px 0 0 27%;">今日推荐</h3>
       <el-container>
-        <el-main style="margin-left: -250px; margin-top: -10px;">
+        <el-main style="width: 100%;margin-top: 2%;">
           <div class="block">
-            <el-carousel trigger="click" height="400px">
+            <el-carousel trigger="click">
               <el-carousel-item v-for="item in imgDate" :key="item">
                 <img
                   :src="item.url"
-                  width="100%"
-                  height="100%"
-                  object-fit="cover"
+                  style="width: 100%; border-radius: 20px;"
+                  object-fit="fit"
                 />
               </el-carousel-item>
             </el-carousel>
           </div>
         </el-main>
-        <el-aside width="450px">
+        <el-aside width="30%">
           <div class="ad">
             这里是广告
           </div>
@@ -65,7 +66,48 @@
       </el-container>
     </div>
     <div class="adBox">
-        推荐目录
+        <div class="like">
+          猜你喜欢
+        </div>
+        <div class="likeBox">
+          <ul>
+            <li>
+              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
+              <el-link :underline="false">
+                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
+              </el-link>
+            </li>
+            <li>
+              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
+              <el-link :underline="false">
+                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
+              </el-link>
+            </li>
+            <li>
+              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
+              <el-link :underline="false">
+                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
+              </el-link>
+            </li>
+            <li>
+              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
+              <el-link :underline="false">
+                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
+              </el-link>
+            </li>
+            <li>
+              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
+              <el-link :underline="false">
+                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
+              </el-link>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="footer">
+      <div class="copyright">
+        copyright
+      </div>
     </div>
   </div>
 </template>
@@ -99,7 +141,6 @@ export default {
 <style scoped>
 .welcome-container {
   background-color: #eae8e8;
-  height: 100%;
 }
 .el-col {
   border-radius: 4px;
@@ -161,34 +202,77 @@ export default {
 }
 
 .mainBox {
-  margin: 5px 120px;
-  border-radius: 20px;
+  margin: 5px 10% 0;
+  /* border-radius: 20px; */
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
   background-color: #fff;
 }
 .block {
-  width: 700px;
+  border-radius: 20px;
+  width: 100%;
   padding: 10px;
 }
-.el-carousel__item h3 {
-  border-radius: 20px;
-  color: #475669;
-  font-size: 14px;
-  opacity: 0.75;
-  line-height: 150px;
-  margin: 0;
-}
+
 .ad {
   margin-top: 20px;
   margin-right: 20px;
+  margin-left: 10px;
   padding: 10px;
   border-radius: 20px;
-  height: 380px;
+  height: 300px;
   background-color: #f4f4f4;
 }
 
 .adBox {
-  margin: 5px 120px;
-  border-radius: 20px;
+  margin: 0px 10%;
+  padding: 10px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   background-color: #fff;
+}
+
+.adBox .like {
+  padding: 10px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 28px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.likeBox {
+  width: 100%;
+  height: 290px;
+}
+
+.likeBox ul li {
+  padding: 5px;
+  float: left;
+  width: 17%;
+  height: 280px;
+  margin: 0 0.9%;
+  background-color: skyblue;
+  border-radius: 10px;
+}
+
+.likeBox ul li img {
+  border-radius: 10px;
+  width: 100%;
+}
+.likeBox ul li .el-link{
+  color: #000;
+  padding: 0 5px;
+}
+
+.footer {
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.footer .copyright {
+  margin: 0 10%;
 }
 </style>
