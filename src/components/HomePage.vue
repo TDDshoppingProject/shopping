@@ -43,9 +43,11 @@
     </el-row>
     <div class="mainBox">
       <!-- 今日推荐 -->
-      <h3 style="padding: 10px 0 0 27%;">今日推荐</h3>
+      <el-header>
+        <h3 style="padding: 10px 0 0 27%;">今日推荐</h3>
+      </el-header>
       <el-container>
-        <el-main style="width: 100%;margin-top: 2%;">
+        <el-main>
           <div class="block">
             <el-carousel trigger="click">
               <el-carousel-item v-for="item in imgDate" :key="item">
@@ -70,38 +72,110 @@
           猜你喜欢
         </div>
         <div class="likeBox">
-          <ul>
-            <li>
-              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
-              <el-link :underline="false">
+          <el-row :gutter="20">
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
                 曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
-              </el-link>
-            </li>
-            <li>
-              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
-              <el-link :underline="false">
-                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
-              </el-link>
-            </li>
-            <li>
-              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
-              <el-link :underline="false">
-                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
-              </el-link>
-            </li>
-            <li>
-              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
-              <el-link :underline="false">
-                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
-              </el-link>
-            </li>
-            <li>
-              <el-link :underline="false" target="_blank"><img src="../assets/images/adBox.webp" alt=""></el-link>
-              <el-link :underline="false">
-                曼叙 |恬素 | 仿古陶瓷草木灰釉中式餐具碗盘碟家庭套装食器日式
-              </el-link>
-            </li>
-          </ul>
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox1.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                三分妄想原神cos服枫原万叶cosplay男装日常卫衣同人cospaly男装
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox2.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                【原神】若陀龙王毛绒挂件 钥匙扣配饰 Genshin
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox3.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                [可可屋]日本原装进口万古烧土锅砂锅银峯花三岛电磁炉兼用火锅炒
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox4.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                出口60支贡缎全棉枕套五星级酒店专用加大乳胶刺绣大号枕头套单人
+                </el-link>
+              </div>
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox5.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                三分妄想原神cos服璃月七星刻晴日常服cospaly女装服装套装c服
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox6.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                春秋薄款洛丽塔蕾丝花边长筒袜萝莉提花白色中筒学生JK小腿堆堆袜
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox7.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                简约现代窗帘绑带客厅百搭磁铁窗帘扣挂钩免打孔创意窗帘绳子绑带
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox8.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                日式创意吃饭碗陶瓷碗套装家用碗筷套装礼品餐具礼盒装婚庆回礼
+                </el-link>
+              </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col">
+              <div class="grid-content bg-blue">
+                <el-link :underline="false" target="_blank">
+                  <img src="../assets/images/adBox9.webp" alt="">
+                </el-link>
+                <el-link :underline="false" class="goods-name">
+                美式乡村亚麻窗帘北欧简约现代 文艺卧室客厅日系遮光 成品窗纱帘
+                </el-link>
+              </div>
+            </el-col>
+          </el-row>
         </div>
     </div>
     <div class="footer">
@@ -211,11 +285,9 @@ export default {
 .block {
   border-radius: 20px;
   width: 100%;
-  padding: 10px;
 }
 
 .ad {
-  margin-top: 20px;
   margin-right: 20px;
   margin-left: 10px;
   padding: 10px;
@@ -244,26 +316,36 @@ li {
 
 .likeBox {
   width: 100%;
-  height: 290px;
 }
 
-.likeBox ul li {
-  padding: 5px;
-  float: left;
-  width: 17%;
-  height: 280px;
-  margin: 0 0.9%;
-  background-color: skyblue;
-  border-radius: 10px;
+.el-row {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.el-col {
+  border-radius: 20px;
+}
+.el-col-lg-4-8 {
+  width: 20%;
+}
+.bg-blue:hover {
+  box-shadow:  19px 19px 38px #7b7b7b;
+}
+.grid-content {
+  border-radius: 20px;
+  min-height: 36px;
 }
 
-.likeBox ul li img {
+.el-link img {
   border-radius: 10px;
-  width: 100%;
+  margin: 10px 10px 0 10px;
+  width: 90%;
 }
-.likeBox ul li .el-link{
+.goods-name {
   color: #000;
-  padding: 0 5px;
+  padding: 0 15%;
 }
 
 .footer {
