@@ -2,15 +2,15 @@
     <div class="loginContainer">
         <div class="loginBox">
             <div class="avatarBox">
-                <img src="../assets/logo.png">
+                <img src="../assets/avatar.png">
             </div>
             <p class="fr">Register</p>
             <p class="toLogin">
                 <router-link to="/login">已有账号？马上登录</router-link>
             </p>
             <el-form ref="registerFormRef" class="registerForm" :rules="registerFormRules" :model="registerForm">
-                <el-form-item prop="username">
-                    <el-input v-model="registerForm.username" prefix-icon="iconfont icon-avatar" placeholder="请输入用户名"></el-input>
+                <el-form-item prop="account">
+                    <el-input v-model="registerForm.account" prefix-icon="iconfont icon-avatar" placeholder="请输入用户名"></el-input>
                </el-form-item>
                 <el-form-item prop="password">
                     <el-input v-model="registerForm.password" type="password" prefix-icon="iconfont icon-mima-1" placeholder="请输入密码"></el-input>
@@ -33,14 +33,14 @@ export default {
     return {
       // 表单数据绑定
       registerForm: {
-        username: '',
+        account: '',
         password: '',
         rePassword: ''
       },
       // 表单验证规则对象
       registerFormRules: {
         // 验证用户名是否合法
-        username: [
+        account: [
           {
             required: true,
             message: '请输入登录名称',
@@ -79,16 +79,17 @@ export default {
         this.$message.error('两次输入的密码不一样')
         return false
       }
-      // 向后端发送注册请求，若状态码201,则注册成功
-      this.$axios.post('users', this.registerForm)
+      // 向后端发送注册请求，若状态码200,则注册成功
+      this.$axios.post('/register', this.registerForm)
         .then(res => {
-          console.log(res.data.meta.status)
+          console.log(res.data.status)
           console.log('-----------------------')
           console.log(res)
-          if (res.data.meta.status === 400) {
+          if (res.data.status === 400) {
             this.$message.warning('用户已存在')
           }
-          if (res.data.meta.status === 201) {
+          if (res.data.status === 201) {
+            console.log(res.data.status)
             this.$message.success(' 注册成功')
             // 3s后自动跳转到登陆页面
             setTimeout(() => {
