@@ -2,20 +2,12 @@
   <div class="welcome-container">
     <el-row class="header">
       <el-col :span="8">
-        <div class="my-info">
-          <el-link :underline="false"
-            ><i class="el-icon-user-solid" style="color: #ec9454"></i
-            >我的淘多多</el-link
-          >
+        <div class="my-info"><router-link to="/person" class="el-icon-user-solid" style="color: #ec9454" >我的淘多多</router-link
+            >
         </div>
       </el-col>
       <el-col :span="16">
         <div class="login-sign">
-          <el-link :underline="false" type="warning" class="shopping-car"
-            ><i class="el-icon-shopping-cart-2"></i>购物车</el-link
-          >
-          <el-link :underline="false" type="danger">请登录</el-link>
-          <el-link :underline="false" class="sign">免费注册</el-link>
         </div>
       </el-col>
     </el-row>
@@ -357,4 +349,12 @@ li {
 .footer .copyright {
   margin: 0 10%;
 }
+
+a{
+  text-decoration: none;
+  color:#EC9454;
+}
+.router-link-active {
+  text-decoration: none;
+  }
 </style>

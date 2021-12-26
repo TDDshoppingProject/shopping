@@ -82,7 +82,7 @@ export default {
             }
             // 普通用户进入个人页面
             if (res.message === 'user') {
-              this.$router.push('/register')
+              this.$router.push('/homepage')
             }
             /* 1.将登录成功之后的token, 保存到客户端的sessionStorage中
            1.1.项目中出了登录之外的其他API接口, 必须在登录之后才能访问
