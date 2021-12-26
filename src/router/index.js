@@ -8,6 +8,8 @@ import welcome from '../components/Admin/WelCome.vue'
 import users from '../components/Admin/UserS.vue'
 import goods from '../components/Admin/GoodS.vue'
 import business from '../components/Admin/BusinesS.vue'
+import HomePage from '../components/HomePage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -56,6 +58,11 @@ const routes = [
     path: '/home',
     name: 'home',
     component: home
+  },
+  {
+    path: '/',
+    name: 'homepage',
+    component: HomePage
   }
 ]
 

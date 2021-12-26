@@ -19,7 +19,14 @@ import {
   Table,
   TableColumn,
   Tooltip,
-  MessageBox
+  MessageBox,
+  Link,
+  Icon,
+  Select,
+  Option,
+  Carousel,
+  CarouselItem,
+  Footer
 
 } from 'element-ui'
 
@@ -45,3 +52,14 @@ Vue.use(Tooltip)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
+
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Link)
+Vue.use(Icon)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(Carousel)
+Vue.use(CarouselItem)
+Vue.use(Header)
+Vue.use(Footer)

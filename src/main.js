@@ -21,6 +21,9 @@ axios.interceptors.request.use(config => {
   return config
 })
 
+// 导入全局样式表
+import './assets/css/global.css'
+
 Vue.config.productionTip = false
 
 new Vue({
