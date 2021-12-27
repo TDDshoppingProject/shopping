@@ -210,9 +210,17 @@ export default {
     }
   },
   created () {
-    this.getUserList()
+  //  this.getUserList()
   },
   methods: {
+    // async getUserList () {
+    //   const { data: res } = await this.$http.get('users')
+
+    //   if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
+    //   this.menulist = res.data
+    //   console.log(res)
+    // },
+
     updateUserInfo () {
       this.$message.success('修改成功！')
       this.$refs.userFormRef.validate(async valid => {

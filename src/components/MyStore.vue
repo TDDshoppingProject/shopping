@@ -80,9 +80,10 @@
           <img :src="item.url" class="image">
           <div style="padding: 14px;">
             <span>{{item.name}}</span><br>
+            <span>{{item.introduce}}</span>
             <div class="bottom">
               <el-tooltip content="修改商品信息" placement="bottom">
-                <el-button type="primary" icon="el-icon-edit" @click="alterGoods" circle></el-button>
+                <el-button type="primary" icon="el-icon-edit" @click="alterGoods(item)" circle></el-button>
               </el-tooltip>
               <el-tooltip content="下架商品" placement="bottom">
                 <el-button type="danger" icon="el-icon-delete" @click="deleteGoods" circle></el-button>
@@ -94,17 +95,20 @@
     </el-row>
 
     <!-- 修改商品信息对话框 -->
-    <div>
     <el-dialog title="修改商品信息" :visible.sync="goodsDialogVisible" width="50%">
       <!-- 内容主体区域 -->
-      <el-form :model="item" ref="goodsFormRef" label-width="100px" style="width: 400px" v-for="(item, index) in goodsForm" :key="item" :offset="index > 0 ? 2 : 0">
+      <el-form :model="goodsEditing" ref="goodsFormRef" label-width="100px" style="width: 400px">
         <!-- 修改商品名 -->
         <el-form-item label="商品名称" prop="name">
-          <el-input v-model="item.name"></el-input>
+          <el-input v-model="goodsEditing.name"></el-input>
         </el-form-item>
         <!-- 修改价格 -->
         <el-form-item label="价格" prop="price">
-          <el-input v-model.number="item.price"></el-input>
+          <el-input v-model.number="goodsEditing.price"></el-input>
+        </el-form-item>
+        <!-- 修改商品介绍 -->
+        <el-form-item label="商品介绍" prop="introduce">
+          <el-input v-model.number="goodsEditing.introduce"></el-input>
         </el-form-item>
       </el-form>
       <!-- 底部区域 -->
@@ -113,7 +117,6 @@
         <el-button type="primary" @click="updateGoodsInfo">确 定</el-button>
       </span>
     </el-dialog>
-    </div>
   </div>
 </template>
 
@@ -153,7 +156,9 @@ export default {
       ],
       size: '',
       alterDialogVisible: false,
-      goodsDialogVisible: false
+      goodsDialogVisible: false,
+      // 正在修改的商品
+      goodsEditing: {}
     };
   },
   methods: {
@@ -171,7 +176,8 @@ export default {
         this.$router.push('/home');
       })
     },
-    alterGoods () {
+    alterGoods (item) {
+      this.goodsEditing = item
       this.goodsDialogVisible = true
     },
     deleteGoods () {

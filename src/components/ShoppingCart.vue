@@ -23,7 +23,7 @@
 
       <el-table-column label="商品名称" width="180">
         <template slot-scope="scope">
-          <span  class="name">{{ scope.row.name }}</span>
+          <span class="name">{{ scope.row.name }}</span>
         </template>
       </el-table-column>
 
@@ -95,13 +95,25 @@ export default {
       ]
     }
   },
+  created () {
+    this.getGoodsList()
+  },
   methods: {
-    handleEdit (index, row) {
-      console.log(index, row);
+    // 获取购物车中的数据
+    async getGoodsList () {
+      const { data: res } = await this.$axios.get('carts', {
+        params: this.queryInfo
+      })
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取购物车列表失败！')
+      }
+      this.userlist = res.data.users
+      this.total = res.data.total
     },
 
     // 根据id删除对应的商品
     async removeGoodsById (id) {
+      console.log(id)
       // 弹框询问用户是否删除
       const confirmResult = await this.$confirm(
         '此操作将永久删除该用户, 是否继续?', '提示',
@@ -114,7 +126,7 @@ export default {
         return this.$message.info('已取消删除')
       }
 
-      const { data: res } = await this.$http.delete('users/' + id)
+      const { data: res } = await this.$axios.delete('users/' + id)
 
       if (res.meta.status !== 200) {
         return this.$message.error('删除用户失败！')

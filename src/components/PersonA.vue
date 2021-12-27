@@ -13,7 +13,8 @@
         <el-aside :width="isCollapse ? '64px' : '200px'">
           <div class="toggle-button" @click="toggleCollapse">|||</div>
           <!-- 侧边栏菜单区 -->
-          <el-menu background-color="#EAEDF1" text-color="black" active-text-color="#EC9454" default-active="/information">
+          <el-menu background-color="#EAEDF1" text-color="black" active-text-color="#EC9454"
+          default-active="/information">
             <!-- 个人信息 -->
             <el-menu-item index="1" @click="jump('/information')">
               <i class="el-icon-user"></i>
@@ -53,7 +54,6 @@ export default {
   data () {
     return {
       // 左侧菜单数据
-      menulist: [],
       isCollapse: false
     }
   },
