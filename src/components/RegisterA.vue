@@ -93,7 +93,7 @@ export default {
             this.$message.success(' 注册成功')
             // 3s后自动跳转到登陆页面
             setTimeout(() => {
-              this.$router.push('login')
+              this.$router.push('/')
             }, 3000)
           }
         })

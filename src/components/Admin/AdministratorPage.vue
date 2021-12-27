@@ -69,7 +69,7 @@ export default {
       // 清空sessionStorage中的token
       window.sessionStorage.clear()
       // 跳转到登录页面
-      this.$router.push('/login')
+      this.$router.push('/')
     },
     // 获取所有
     getMenuList () {

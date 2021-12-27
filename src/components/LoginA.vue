@@ -78,7 +78,7 @@ export default {
             console.log(res.message)
             // 管理员进入后台管理系统
             if (res.message === 'admin') {
-              this.$router.push('/homePage')
+              this.$router.push('/admin')
             }
             // 普通用户进入个人页面
             if (res.message === 'user') {
