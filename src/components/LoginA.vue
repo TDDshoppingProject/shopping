@@ -78,7 +78,7 @@ export default {
             console.log(res.message)
             // 管理员进入后台管理系统
             if (res.message === 'admin') {
-              this.$router.push('/admin')
+              this.$router.push('/homePage')
             }
             // 普通用户进入个人页面
             if (res.message === 'user') {
@@ -88,11 +88,11 @@ export default {
            1.1.项目中出了登录之外的其他API接口, 必须在登录之后才能访问
            1.2.token只应在当前网站打开期间生效, 所以将token保存到sessionStorage中 */
             window.sessionStorage.setItem('token', res.data)
-            /*  2.通过编程式导航跳转到后台主页, 路由地址是 /home */
+            /* 存放用户的id */
+            window.sessionStorage.setItem('userid', res.data.token)
+            /* 存放是用户还是商家的判断 */
+            window.sessionStorage.setItem('userPermissions', res.data.token)
           }
-          /* if (this.loginForm.account === 'zsa' & this.loginForm.password === '123456') {
-            this.$message.success('登陆成功')
-          } */
         } else {
           return false
         }
