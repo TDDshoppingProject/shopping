@@ -12,6 +12,12 @@ import business from '../components/Admin/BusinesS.vue'
 import homePage from '../components/HomePageL.vue'
 import goodsview from '../components/GoodsView.vue'
 
+import PersonA from '../components/PersonA.vue'
+import InformationA from '../components/InformationA.vue'
+import ShoppingCart from '../components/ShoppingCart.vue'
+import MyOrder from '../components/MyOrder.vue'
+import MyStore from '../components/MyStore.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,6 +35,16 @@ const routes = [
     path: '/goodsview',
     name: 'goodsview',
     component: goodsview
+  },
+  {
+    path: '/person',
+    component: PersonA,
+    children: [
+      { path: '/information', component: InformationA },
+      { path: '/cart', component: ShoppingCart },
+      { path: '/order', component: MyOrder },
+      { path: '/store', component: MyStore }
+    ]
   },
   {
     path: '/admin',

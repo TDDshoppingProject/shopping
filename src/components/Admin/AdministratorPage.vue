@@ -3,7 +3,7 @@
     <!-- 头部区 -->
     <el-header>
       <div>
-        <img src="../../assets/logo.png">
+        <img src="../../assets/title.png">
         <span>淘多多后台管理系统</span>
       </div>
       <el-button class="but1" round @click="logout">退出</el-button>
