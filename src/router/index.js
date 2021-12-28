@@ -17,6 +17,7 @@ import InformationA from '../components/InformationA.vue'
 import ShoppingCart from '../components/ShoppingCart.vue'
 import MyOrder from '../components/MyOrder.vue'
 import MyStore from '../components/MyStore.vue'
+import purchase from '../components/PurchaseSus.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: register
+  },
+  {
+    path: '/purchase',
+    name: 'purchase',
+    component: purchase
   },
   {
     path: '/goodsview',

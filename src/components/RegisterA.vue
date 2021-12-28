@@ -6,7 +6,7 @@
             </div>
             <p class="fr">Register</p>
             <p class="toLogin">
-                <router-link to="/login">已有账号？马上登录</router-link>
+                <router-link to="/">已有账号？马上登录</router-link>
             </p>
             <el-form ref="registerFormRef" class="registerForm" :rules="registerFormRules" :model="registerForm">
                 <el-form-item prop="account">

@@ -36,10 +36,12 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   InputNumber,
-  Image
+  Image,
+  Popover
 
 } from 'element-ui'
 
+Vue.use(Popover)
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
@@ -123,3 +125,4 @@ Vue.use(Card)
 Vue.use(Tooltip)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
+Vue.prototype.$prompt = MessageBox.prompt

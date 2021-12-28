@@ -61,7 +61,7 @@ export default {
   methods: {
     // 获取用户列表
     getGoodsList () {
-      this.$axios.post('admin/goodslist', '"' + this.search.toString() + '"')
+      this.$axios.post('/goodslist', '"' + this.search.toString() + '"')
         .then(res => {
           if (res.status === 200) {
             this.goodList = res.data.data

@@ -78,20 +78,20 @@ export default {
             console.log(res.message)
             // 管理员进入后台管理系统
             if (res.message === 'admin') {
+              /* 存放用户的id */
+              window.sessionStorage.setItem('userid', res.data.master.id)
               this.$router.push('/admin')
             }
             // 普通用户进入个人页面
             if (res.message === 'user') {
+              /* 存放用户的id */
+              window.sessionStorage.setItem('userid', res.data.user.id)
               this.$router.push('/homepage')
             }
             /* 1.将登录成功之后的token, 保存到客户端的sessionStorage中
            1.1.项目中出了登录之外的其他API接口, 必须在登录之后才能访问
            1.2.token只应在当前网站打开期间生效, 所以将token保存到sessionStorage中 */
-            window.sessionStorage.setItem('token', res.data)
-            /* 存放用户的id */
-            window.sessionStorage.setItem('userid', res.data.token)
-            /* 存放是用户还是商家的判断 */
-            window.sessionStorage.setItem('userPermissions', res.data.token)
+            window.sessionStorage.setItem('token', res.data.token)
           }
         } else {
           return false

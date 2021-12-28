@@ -66,7 +66,7 @@
         <div class="likeBox" >
           <el-row :gutter="20" >
             <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col" v-for="goods in goodList" :key="goods.index">
-              <div class="grid-content bg-blue" @click='toView(goods.name)'>
+              <div class="grid-content bg-blue" @click='toView(goods.id)'>
                 <el-link :underline="false" target="_blank">
                   {{goods.img}}
                 </el-link>
@@ -122,7 +122,7 @@ export default {
   methods: {
     // 获取用户列表
     getGoodsList () {
-      this.$axios.post('admin/goodslist', '"' + this.search.toString() + '"')
+      this.$axios.post('/goodslist', '"' + this.search.toString() + '"')
         .then(res => {
           if (res.status === 200) {
             this.goodList = res.data.data
@@ -133,8 +133,10 @@ export default {
         })
     },
     toView (goods) {
-      // 页面传值将想要查看的商品名字传递给googsview页面
+      console.log(goods)
+      // 页面传值将想要查看的商品id传递给googsview页面
       this.$router.push({ name: 'goodsview', params: { id: goods } })
+      window.sessionStorage.setItem('gid', this.goods)
     }
   }
 }

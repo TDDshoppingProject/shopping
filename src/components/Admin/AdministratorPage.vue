@@ -31,7 +31,7 @@
               <span>用户管理</span>
             </template>
              <!-- index作为路由跳转path '/'+path(默认返回值没有以斜线开头) -->
-            <el-menu-item index="/business" @click="saveNavState('/welcome')"><i class="el-icon-data-line"></i>商家列表
+            <el-menu-item index="/business" @click="saveNavState('/business')"><i class="el-icon-data-line"></i>商家列表
             </el-menu-item>
             <el-menu-item index="/users" @click="saveNavState('/users')"><i class="el-icon-data-board"></i>用户列表</el-menu-item>
           </el-submenu>
