@@ -42,7 +42,7 @@
         <el-main>
           <div class="block">
             <el-carousel trigger="click">
-              <el-carousel-item v-for="item in imgDate" :key="item">
+              <el-carousel-item v-for="item in imgDate" :key="item.id">
                 <img
                   :src="item.url"
                   style="width: 100%; border-radius: 20px;"
@@ -187,15 +187,19 @@ export default {
       select: '',
       imgDate: [
         {
+          id: 1,
           url: require('../assets/images/1.jpeg')
         },
         {
+          id: 2,
           url: require('../assets/images/2.jpeg')
         },
         {
+          id: 3,
           url: require('../assets/images/3.jpeg')
         },
         {
+          id: 4,
           url: require('../assets/images/4.jpeg')
         }
       ]
@@ -204,7 +208,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .welcome-container {
   background-color: #eae8e8;
 }

@@ -1,0 +1,8 @@
+function login_clk() {
+	url = localize.url
+	if (localize.type == 1) {
+		location.href = url
+	} else {
+		window.open(url, "_blank", "height=520,width=770,left=315,top=80,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status")
+	}
+}
