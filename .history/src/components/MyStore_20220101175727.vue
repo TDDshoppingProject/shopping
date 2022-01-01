@@ -323,7 +323,7 @@ export default {
 
 .image {
   width: 180px;
-  height: 210px;
+  height: 200px;
 }
 .goodsCard {
   width: 100%;

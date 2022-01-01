@@ -323,7 +323,7 @@ export default {
 
 .image {
   width: 180px;
-  height: 210px;
+  height: 220px;
 }
 .goodsCard {
   width: 100%;
@@ -343,7 +343,7 @@ export default {
   justify-content: space-between;
 }
 span{
-  font-size: 8px;
+  font-size: 10px;
 }
 
 </style>
