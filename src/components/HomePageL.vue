@@ -68,7 +68,7 @@
             <el-col :xs="12" :sm="12" :lg="{span: '4-8'}" class="card-panel-col" v-for="goods in goodList" :key="goods.index">
               <div class="grid-content bg-blue" @click='toView(goods.id)'>
                 <el-link :underline="false" target="_blank">
-                  <img :src="goods.img" style="height:55%;weight:80%">
+                  <img :src="goods.img">
                 </el-link>
                 <el-link :underline="false" class="goods-name" >
                   {{goods.name}}
