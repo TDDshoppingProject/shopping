@@ -7,9 +7,12 @@ import './assets/css/global.css'
 // 导入icon
 import './assets/font/iconfont.css'
 import axios from 'axios'
+import VueCookies from 'vue-cookies'
 
+Vue.use(VueCookies);
 Vue.prototype.$axios = axios
 // 配置请求的根路径
+// axios.defaults.baseURL = 'http://127.0.0.1:8082'
 axios.defaults.baseURL = '/api'
 // axios请求拦截
 // request请求拦截器中, 展示进度条 NProgress.start()

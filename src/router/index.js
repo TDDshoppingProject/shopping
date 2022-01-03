@@ -20,6 +20,8 @@ import MyStore from '../components/MyStore.vue'
 import purchase from '../components/PurchaseSus.vue'
 import bussinessorder from '../components/BusinessOrder.vue'
 import applystore from '../components/ApplyStore.vue'
+// import cookies from 'vue-cookies'
+
 Vue.use(VueRouter)
 
 const routes = [

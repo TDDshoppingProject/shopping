@@ -38,9 +38,7 @@
           </div>
         </template>
         <div class="cartbtn">
-          <el-button type="warning" @click="addToShoppingCart"
-            >加入购物车</el-button
-          >
+          <el-button type="warning" @click="addToShoppingCart">加入购物车</el-button>
           <el-button type="primary" @click="toPurchase">直接购买</el-button>
         </div>
       </div>
@@ -102,6 +100,9 @@ export default {
       this.$axios
         .post('/getgoods/' + window.sessionStorage.getItem('gid'))
         .then((result) => {
+          /*
+          Cookie.set
+          */
           console.log(result.data.data.review);
           if (result.status === 200) {
             this.reviewList = result.data.data.review;
@@ -110,15 +111,14 @@ export default {
     },
     // 将商品放进购物车
     addToShoppingCart () {
-      /*  this.$axios.post('cart', this.goodList)
-        .then(res => {
-          if (res.status === 200) {
-            console.log(res.status)
-            this.$message.success('已成功加入购物车')
-          } else {
-            this.$message.error('加入购物车失败')
-          }
-        }) */
+      this.$axios.get('/cart/addGoodsToCart/' + window.sessionStorage.getItem('gid')).then(res => {
+        if (res.status === 200) {
+          this.$router.push('/cart');
+          this.$message.success('已成功加入购物车');
+        } else {
+          this.$message.error('加入购物车失败');
+        }
+      })
     },
     handleChange (value) {
       console.log(value);
