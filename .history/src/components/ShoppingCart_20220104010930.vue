@@ -155,7 +155,7 @@ export default {
           '/createorder/' +
             this.number +
             '/' +
-            this.theOne +
+            this.id +
             '/' +
             parseInt(window.sessionStorage.getItem('userid'))
         )

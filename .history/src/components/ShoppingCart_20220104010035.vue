@@ -54,7 +54,7 @@
       <el-button class="button" type="primary" round @click="addGoodsById()">+1</el-button>
       <el-button class="button" type="warning" round @click="reduceGoodsById()">-1</el-button>
       <el-button class="button" type="danger" round @click="removeGoodsById()">删除</el-button>
-      <el-button class="button" type="success" @click="toPurchase" round>结算</el-button>
+      <el-button class="button" type="success" @click="finishCart" round>结算</el-button>
       <el-button class="button" type="danger" @click="clearCart" round>清空购物车</el-button>
     </el-row>
   </div></el-card>
@@ -66,8 +66,7 @@ export default {
     return {
       cartForm: [],
       goodsId: '',
-      theOne: '',
-      number: 1
+      theOne: ''
     }
   },
   mounted () {
@@ -148,41 +147,20 @@ export default {
       this.getCartList()
       this.$router.go(0)
     },
-    // 直接购买
-    toPurchase () {
-      this.$axios
-        .post(
-          '/createorder/' +
-            this.number +
-            '/' +
-            this.theOne +
-            '/' +
-            parseInt(window.sessionStorage.getItem('userid'))
-        )
-        .then((res) => {
-          console.log(res);
-          // 成功跳转到支付页面
-          if (res.status === 200) {
-            this.$router.push('/purchase');
-          } else {
-            this.$message.error('购买失败');
-          }
-        });
-    },
+
     // 结算购物车选中内容
     finishCart () {
       console.log(this.theOne);
       console.log(window.sessionStorage.getItem('userid'));
       this.$axios.post('/cart/generateOrder/' + this.theOne + '/' + window.sessionStorage.getItem('userid')
       ).then(res => {
-        console.log(res);
+        console.log(res.status);
         if (res.status === 200) {
           this.$message.success('结算成功');
+
           this.removeGoodsById()
-          console.log('结算成功')
         } else {
           this.$message.error('结算失败');
-          console.log('结算失败')
         }
       })
       this.getCartList()

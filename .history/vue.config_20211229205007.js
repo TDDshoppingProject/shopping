@@ -9,7 +9,6 @@ module.exports = {
           '^/api': '' // 重写路径
         }
       }
-    },
-    port: 80
+    }
   }
 }
